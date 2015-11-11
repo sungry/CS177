@@ -3,15 +3,15 @@ CS177 "Project Time Waster"
 This is our final group project for CS177 at CCSF. It's pretty awesome, because we are.
 
 Team Awesome is:
-kokixi
-romanborsov
-boredHuman
-miswarowski
-wildelf
-EricsfChu
+@kokixi
+@romanborsov
+@boredHuman
+@miswarowski
+@wildelf
+@EricsfChu
 TBD
 TBD
-and of course sungry
+and of course @sungry
 
 Team Document Links (if you can't see these, you probably aren't on our team)
 
