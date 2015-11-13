@@ -6,7 +6,7 @@ public class Parallaxing : MonoBehaviour
   /// <summary>
   /// Scrolling speed
   /// </summary>
-  public Vector2 speed = new Vector2(1, 1);
+  public Vector2 speed = new Vector2(2, 2);
 
   /// <summary>
   /// Moving direction
