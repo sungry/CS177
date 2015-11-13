@@ -856,7 +856,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   Priority: 128
@@ -990,11 +990,11 @@ Prefab:
       objectReference: {fileID: 112298, guid: 3cbca3511266a3b45a55aaf653f4a314, type: 2}
     - target: {fileID: 11424656, guid: bb5c5daef70b9df4396df0c2d4de3454, type: 2}
       propertyPath: spawnMax
-      value: .5
+      value: .100000001
       objectReference: {fileID: 0}
     - target: {fileID: 11424656, guid: bb5c5daef70b9df4396df0c2d4de3454, type: 2}
       propertyPath: spawnMin
-      value: 0
+      value: .100000001
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bb5c5daef70b9df4396df0c2d4de3454, type: 2}
