@@ -24,6 +24,8 @@ namespace UnitySampleAssets._2D
         private Animator anim; // Reference to the player's animator component.
 
         bool doubleJump = false;
+        bool sprinting = false;
+        float sprintTime;
 
         private void Awake()
         {
@@ -45,11 +47,28 @@ namespace UnitySampleAssets._2D
 
             if (grounded)
                 doubleJump = false;
+
+            if(sprinting)
+            {
+                if (Time.time > sprintTime + 2)
+                {
+                    maxSpeed = 10f;
+                    sprinting = false;
+                }
+                
+            }
         }
 
 
         public void Move(float move, bool crouch, bool jump)
         {
+
+            if (Input.GetKeyDown(KeyCode.LeftShift) && !sprinting)
+            {
+                sprinting = true;
+                sprintTime = Time.time;
+                maxSpeed = 50f;
+            }
 
 
             // If crouching, check to see if the character can stand up
@@ -111,5 +130,6 @@ namespace UnitySampleAssets._2D
             theScale.x *= -1;
             transform.localScale = theScale;
         }
+
     }
 }
