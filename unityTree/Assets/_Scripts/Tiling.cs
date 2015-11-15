@@ -35,9 +35,10 @@ public class Tiling : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
-	if (!hasRightBuddy || !hasLeftBuddy) 
+	void Update () 
 	{
+		if (!hasRightBuddy || !hasLeftBuddy) 
+		{
 
 			// calculate camera extent from player in game units
 			float camExtent = cam.orthographicSize * Screen.width/Screen.height;
@@ -76,13 +77,15 @@ public class Tiling : MonoBehaviour {
 		Transform newBuddy = (Transform)Instantiate (myTransform, newPosition, myTransform.rotation);
 
 		// makes buddy a mirror if the element doesn't tile
-		if (reverseScale == true) {
+		if (reverseScale == true) 
+		{
 			newBuddy.localScale = new Vector3 (-newBuddy.localScale.x,
 			                                   newBuddy.localScale.y,newBuddy.localScale.z);
 		}
 
 		newBuddy.parent = myTransform.parent;
-		if (direction > 0) {
+		if (direction > 0) 
+		{
 			newBuddy.GetComponent<Tiling>().hasLeftBuddy = true;
 		}
 		else 
