@@ -5,15 +5,15 @@ using System.Collections;
 
 public class Tiling : MonoBehaviour {
 
-	// offset for buddy loading
+	// offset for buddy loading, > 0 to force buddy to spawn off camera (right)
 	public int offset = 2;
+
+	// set to true for non-tile backgrounds
+	public bool reverseScale = false;
 
 	// instantiation checks
 	public bool hasRightBuddy = false;
 	public bool hasLeftBuddy = false;
-
-	// use for non-tile backgrounds
-	public bool reverseScale = false;
 
 	// width of the texture element
 	private float spriteExtent;
@@ -37,13 +37,13 @@ public class Tiling : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		if (!hasRightBuddy || !hasLeftBuddy) 
+		if (!hasRightBuddy) // removed ' || !hasLeftBuddy' since we don't care
 		{
 
 			// calculate camera extent from player in game units
 			float camExtent = cam.orthographicSize * Screen.width/Screen.height;
 
-			// find edge of the ground visible by camera
+			// find edge of the sprite visible by camera
 			float edgeVisibleRight = myTransform.position.x + spriteExtent/2 - camExtent;
 			float edgeVisisbleLeft = myTransform.position.x - spriteExtent/2 + camExtent;
 
@@ -54,13 +54,16 @@ public class Tiling : MonoBehaviour {
 				MakeNewBuddy(1);
 				hasRightBuddy = true;
 			}
-			else if (cam.transform.position.x <= edgeVisisbleLeft + offset &&
+/*			else if (cam.transform.position.x <= edgeVisisbleLeft + offset &&
 			         !hasLeftBuddy)
 			{
 				MakeNewBuddy(-1);
 				hasLeftBuddy = true;
-			}
+			} // we don't need to check to the left */
 		}
+		
+		// TODO: buddy clean up
+
 	}
 
 	/// <summary>
