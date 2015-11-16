@@ -10,6 +10,7 @@ GameObject:
   - 4: {fileID: 485888}
   - 212: {fileID: 21223944}
   - 61: {fileID: 6158088}
+  - 114: {fileID: 11439856}
   m_Layer: 0
   m_Name: PavementGround
   m_TagString: Untagged
@@ -36,12 +37,27 @@ BoxCollider2D:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 114756}
   m_Enabled: 1
-  m_Material: {fileID: 6200000, guid: 3626fe8e008014f6bbd19bb72937b311, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 20.4799995, y: 1.51999998}
+--- !u!114 &11439856
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 114756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bd86dfe6750d6f449a35f618c036f24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  offset: 2
+  reverseScale: 0
+  hasRightBuddy: 0
+  hasLeftBuddy: 0
 --- !u!212 &21223944
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -78,6 +94,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Material
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
