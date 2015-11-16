@@ -10,6 +10,7 @@ GameObject:
   - 4: {fileID: 416564}
   - 212: {fileID: 21275630}
   - 114: {fileID: 11437670}
+  - 114: {fileID: 11456234}
   m_Layer: 0
   m_Name: treeline1
   m_TagString: Untagged
@@ -44,6 +45,20 @@ MonoBehaviour:
   reverseScale: 0
   hasRightBuddy: 0
   hasLeftBuddy: 0
+--- !u!114 &11456234
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 134726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19d4a7967cc7e1244ba6a5834f13b7ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: {x: 0, y: 0}
+  direction: {x: 1, y: 0}
+  isLinkedToCamera: 0
 --- !u!212 &21275630
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -83,7 +98,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: speed.x
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: speed.y

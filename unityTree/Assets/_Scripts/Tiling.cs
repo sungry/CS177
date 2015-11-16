@@ -46,12 +46,14 @@ public class Tiling : MonoBehaviour {
 			// find edge of the sprite visible by camera
 			float edgeVisibleRight = myTransform.position.x + spriteExtent/2 - camExtent;
 			float edgeVisisbleLeft = myTransform.position.x - spriteExtent/2 + camExtent;
-
+			
+			Debug.Log(this.name + " visibleRight: " + edgeVisibleRight + "\nvisibleLeft: " + edgeVisisbleLeft);
+			
 			// check for edge of element to the right or left
 			if (cam.transform.position.x >= edgeVisibleRight - offset &&
 			    !hasRightBuddy)
 			{
-				MakeNewBuddy(1);
+				MakeNewBuddy(offset);
 				hasRightBuddy = true;
 			}
 /*			else if (cam.transform.position.x <= edgeVisisbleLeft + offset &&
