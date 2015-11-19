@@ -10,7 +10,7 @@ public class DePowerUpScript : MonoBehaviour {
         if (other.tag == "Player")
         {
             hud = GameObject.Find("Main Camera").GetComponent<HUDScript>();
-            hud.IncreaseScore(-200);
+            hud.IncreaseScore(-5);
             Destroy(this.gameObject);
         }
     }
