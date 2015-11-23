@@ -48,14 +48,11 @@ namespace UnitySampleAssets._2D
             if (grounded)
                 doubleJump = false;
 
-            if(sprinting)
+            // sprint time is now 0.2 seconds long
+            if(sprinting && (Time.time > sprintTime + 0.2))
             {
-                if (Time.time > sprintTime + 2)
-                {
-                    maxSpeed = 10f;
-                    sprinting = false;
-                }
-                
+                maxSpeed = 10f;
+                sprinting = false;
             }
         }
 
@@ -68,6 +65,9 @@ namespace UnitySampleAssets._2D
                 sprinting = true;
                 sprintTime = Time.time;
                 maxSpeed = 50f;
+
+                // remove vertical displacement when sprinting
+                GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0.5885f);
             }
 
 
