@@ -155,6 +155,26 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
+--- !u!1 &53544221 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 114756, guid: eddc9b0895ecb9e4f8ce9939f1a4cdc0, type: 2}
+  m_PrefabInternal: {fileID: 664478912}
+--- !u!50 &53544226
+Rigidbody2D:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 53544221}
+  m_Mass: 2
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 0
 --- !u!1001 &115763553
 Prefab:
   m_ObjectHideFlags: 0
@@ -208,6 +228,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 130074, guid: 16ba78204f2ee444dad575c4a40e53f0, type: 2}
       propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 130074, guid: 16ba78204f2ee444dad575c4a40e53f0, type: 2}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -352,6 +376,10 @@ Prefab:
       propertyPath: spawnMax
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 139516, guid: 0a9a6fa676c1f454ca2674778a491fa8, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0a9a6fa676c1f454ca2674778a491fa8, type: 2}
   m_IsPrefabParent: 0
@@ -424,6 +452,10 @@ Prefab:
     - target: {fileID: 130074, guid: 16ba78204f2ee444dad575c4a40e53f0, type: 2}
       propertyPath: m_Name
       value: PowerUpSpawnHigh
+      objectReference: {fileID: 0}
+    - target: {fileID: 130074, guid: 16ba78204f2ee444dad575c4a40e53f0, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 16ba78204f2ee444dad575c4a40e53f0, type: 2}
@@ -512,7 +544,6 @@ GameObject:
   - 50: {fileID: 543260285}
   - 114: {fileID: 543260284}
   - 114: {fileID: 543260283}
-  - 61: {fileID: 543260282}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -520,20 +551,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!61 &543260282
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6100000, guid: 87a2357765801c34292d6718d8b4d770,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 543260281}
-  m_Enabled: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Size: {x: .25, y: .680000007}
 --- !u!114 &543260283
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -684,6 +701,18 @@ Prefab:
       propertyPath: m_Offset.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6158088, guid: eddc9b0895ecb9e4f8ce9939f1a4cdc0, type: 2}
+      propertyPath: m_UsedByEffector
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6158088, guid: eddc9b0895ecb9e4f8ce9939f1a4cdc0, type: 2}
+      propertyPath: m_Size.x
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 6158088, guid: eddc9b0895ecb9e4f8ce9939f1a4cdc0, type: 2}
+      propertyPath: m_Size.y
+      value: 1.51999998
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: eddc9b0895ecb9e4f8ce9939f1a4cdc0, type: 2}
   m_IsPrefabParent: 0
@@ -825,6 +854,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 1548725235}
     m_Modifications:
+    - target: {fileID: 11422728, guid: 16ba78204f2ee444dad575c4a40e53f0, type: 2}
+      propertyPath: objs.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 458956, guid: 16ba78204f2ee444dad575c4a40e53f0, type: 2}
       propertyPath: m_LocalPosition.x
       value: -4.82000017
@@ -860,6 +893,10 @@ Prefab:
     - target: {fileID: 130074, guid: 16ba78204f2ee444dad575c4a40e53f0, type: 2}
       propertyPath: m_Name
       value: PowerUpSpawnMed
+      objectReference: {fileID: 0}
+    - target: {fileID: 11422728, guid: 16ba78204f2ee444dad575c4a40e53f0, type: 2}
+      propertyPath: objs.Array.data[1]
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 16ba78204f2ee444dad575c4a40e53f0, type: 2}

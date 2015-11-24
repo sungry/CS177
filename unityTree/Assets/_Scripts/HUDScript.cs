@@ -32,6 +32,6 @@ public class HUDScript : MonoBehaviour {
             GUI.contentColor = Color.red;
         }
             //position 10, 10 100 wide 30 tall
-        GUI.Label(new Rect(10, 10, 100, 30), "Score: " + (int)(playerScore * 100));
+        GUI.Label(new Rect(10, 10, 100, 30), "Score: " + (int)(playerScore * 10));
     }
 }
