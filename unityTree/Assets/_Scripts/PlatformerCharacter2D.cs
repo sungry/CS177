@@ -131,5 +131,9 @@ namespace UnitySampleAssets._2D
             transform.localScale = theScale;
         }
 
-    }
+		public void setSpeed(float newSpeed)
+		{
+			maxSpeed = newSpeed;
+    	}
+	}
 }

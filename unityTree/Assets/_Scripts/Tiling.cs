@@ -64,7 +64,7 @@ public class Tiling : MonoBehaviour {
 		
 		// TODO: buddy clean up
 
-		if (hasRightBuddy) // once buddy exists, watch for self-destruction
+		if (hasLeftBuddy) // once buddy exists, watch for self-destruction
 		{
 
 			// calculate camera extent from player in game units
@@ -78,10 +78,6 @@ public class Tiling : MonoBehaviour {
 			if (cam.transform.position.x >= edgeVisibleRight + offset &&
 			    hasRightBuddy)
 			{
-				Debug.Log(this.name + " went BOOM at " + Time.time);
-				Debug.Log("Cam pos " + cam.transform.position.x + " >= Edge " + edgeVisibleRight + " + Offset " + offset);
-				Debug.Log("Edge = Transform.x " + myTransform.position.x + " sprite extent " + spriteExtent/2 + " cam extent " + camExtent);
-				Debug.Log(this.name + ": visibleRight: " + edgeVisibleRight + " visibleLeft: " + edgeVisibleLeft);
 				Destroy (this.gameObject);
 			}
 /*			else if (cam.transform.position.x <= edgeVisisbleLeft + offset &&
