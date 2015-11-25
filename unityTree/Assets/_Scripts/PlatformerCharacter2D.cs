@@ -26,16 +26,37 @@ namespace UnitySampleAssets._2D
         bool doubleJump = false;
         bool sprinting = false;
         float sprintTime;
+        float gameTime;
+
+        private float difficulty2 = 20f;
+        private float difficulty3 = 30f;
+        private float difficulty4 = 40f;
 
         private void Awake()
         {
+            gameTime = Time.time;
             // Setting up references.
             groundCheck = transform.Find("GroundCheck");
             ceilingCheck = transform.Find("CeilingCheck");
             anim = GetComponent<Animator>();
         }
 
+        private void Update()
+        {
+            if (Time.time > gameTime+ 30f)
+            { maxSpeed += 5f;
+                gameTime = Time.time; }
 
+            /*
+            //difficulty implementation
+            if (Time.time > gameTime + 130f)
+                maxSpeed = difficulty4;
+            else if (Time.time > (90f + gameTime) && Time.time < (gameTime + 130f))
+                maxSpeed = difficulty3;
+            else if (Time.time > (45f + gameTime) && Time.time < (gameTime + 90f))
+                maxSpeed = difficulty2;
+            */
+        }
         private void FixedUpdate()
         {
             // The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
@@ -131,5 +152,19 @@ namespace UnitySampleAssets._2D
             transform.localScale = theScale;
         }
 
+	public void setSpeed(float newSpeed)
+	{
+			maxSpeed = newSpeed;
+    	}
+
+        public double getMaxSpeed()
+        {
+            return maxSpeed;
+        }
+
+        void OnGui()
+        {
+            GUI.Label(new Rect(10, 10, 300, 30), "Speed: " + maxSpeed);
+        }
     }
 }

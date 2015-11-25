@@ -45,10 +45,8 @@ public class Tiling : MonoBehaviour {
 
 			// find edge of the sprite visible by camera
 			float edgeVisibleRight = myTransform.position.x + spriteExtent/2 - camExtent;
-			float edgeVisisbleLeft = myTransform.position.x - spriteExtent/2 + camExtent;
-			
-			Debug.Log(this.name + " visibleRight: " + edgeVisibleRight + "\nvisibleLeft: " + edgeVisisbleLeft);
-			
+			float edgeVisibleLeft = myTransform.position.x - spriteExtent/2 + camExtent;
+
 			// check for edge of element to the right or left
 			if (cam.transform.position.x >= edgeVisibleRight - offset &&
 			    !hasRightBuddy)
@@ -65,6 +63,30 @@ public class Tiling : MonoBehaviour {
 		}
 		
 		// TODO: buddy clean up
+
+		if (hasLeftBuddy) // once buddy exists, watch for self-destruction
+		{
+
+			// calculate camera extent from player in game units
+			float camExtent = cam.orthographicSize * Screen.width/Screen.height;
+
+			// find edge of the sprite visible by camera
+			float edgeVisibleLeft = myTransform.position.x - spriteExtent - camExtent;
+			float edgeVisibleRight = myTransform.position.x + spriteExtent + camExtent;
+
+			// check for edge of element to the right
+			if (cam.transform.position.x >= edgeVisibleRight + offset &&
+			    hasRightBuddy)
+			{
+				Destroy (this.gameObject);
+			}
+/*			else if (cam.transform.position.x <= edgeVisisbleLeft + offset &&
+			         !hasLeftBuddy)
+			{
+				MakeNewBuddy(-1);
+				hasLeftBuddy = true;
+			} // we don't need to check to the left */
+		}
 
 	}
 
@@ -89,6 +111,7 @@ public class Tiling : MonoBehaviour {
 		}
 
 		newBuddy.parent = myTransform.parent;
+
 		if (direction > 0) 
 		{
 			newBuddy.GetComponent<Tiling>().hasLeftBuddy = true;
@@ -99,4 +122,5 @@ public class Tiling : MonoBehaviour {
 		}
 
 	}
+	
 }
