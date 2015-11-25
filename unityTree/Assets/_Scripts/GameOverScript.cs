@@ -4,10 +4,16 @@ using System.Collections;
 public class GameOverScript : MonoBehaviour {
 
     int score = 0;
+	private AudioSource audioSource;
+
 	void Start ()
     {
         score = PlayerPrefs.GetInt("Score");
-	}
+        if (GameSystem.soundEnabled == false) {
+            audioSource = audioSource.GetComponent<AudioSource>();
+            audioSource.mute = true;
+        }
+    }
 
     void OnGUI()
     {
