@@ -16,11 +16,11 @@ namespace UnitySampleAssets._2D
 
         private Transform player; // Reference to the player's transform.
 
+
         private void Awake()
         {
             // Setting up the reference.
             player = GameObject.FindGameObjectWithTag("Player").transform;
-
         }
 
 
