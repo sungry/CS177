@@ -5,8 +5,8 @@ public class Player : MonoBehaviour {
 
     private Rigidbody2D myRigidbody2D;
 
-    public float moveSpeed;
-    public float jumpSpeed;
+    public float moveSpeed = 10f;
+    public float jumpSpeed = 800f;
 
     private Animator anim;
 
