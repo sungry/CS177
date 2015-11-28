@@ -352,9 +352,10 @@ GameObject:
   - 50: {fileID: 219847911}
   - 114: {fileID: 219847914}
   - 95: {fileID: 219847913}
+  - 58: {fileID: 219847915}
   m_Layer: 9
   m_Name: Brick
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -366,14 +367,15 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 219847909}
   m_LocalRotation: {x: 0, y: 0, z: -.281435549, w: .959580183}
-  m_LocalPosition: {x: -2.93000007, y: -5.92000008, z: 0}
+  m_LocalPosition: {x: -2.45000005, y: -5.82000017, z: -9}
   m_LocalScale: {x: .5, y: .5, z: 1}
   m_Children:
   - {fileID: 940813718}
   - {fileID: 1072511682}
   - {fileID: 1838159239}
+  - {fileID: 1342601374}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
 --- !u!50 &219847911
 Rigidbody2D:
   serializedVersion: 2
@@ -384,7 +386,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: .0500000007
-  m_GravityScale: 1
+  m_GravityScale: 3
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -396,7 +398,7 @@ BoxCollider2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 219847909}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
@@ -428,16 +430,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 219847909}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: badc5ef9f10dddf4491ae568592ea989, type: 3}
+  m_Script: {fileID: 11500000, guid: 3620efceb2da47e4f8abd2c3e0ddffd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 0
-  jumpSpeed: 0
-  whatIsGround:
-    serializedVersion: 2
-    m_Bits: 0
-  groundCheck: {fileID: 0}
-  groundDistance: 0
+--- !u!58 &219847915
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 219847909}
+  m_Enabled: 0
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: -1, y: -1}
+  serializedVersion: 2
+  m_Radius: 1.6291728
 --- !u!4 &240370983 stripped
 Transform:
   m_PrefabParentObject: {fileID: 458956, guid: 16ba78204f2ee444dad575c4a40e53f0, type: 2}
@@ -802,7 +810,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d08f91df3bd212f429df17f53ce2f364, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 5
+  maxSpeed: 0
   jumpForce: 800
   crouchSpeed: .25
   airControl: 1
@@ -1749,6 +1757,47 @@ Transform:
 Transform:
   m_PrefabParentObject: {fileID: 423838, guid: bb5c5daef70b9df4396df0c2d4de3454, type: 2}
   m_PrefabInternal: {fileID: 806057250}
+--- !u!1 &1342601373
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1342601374}
+  - 61: {fileID: 1342601375}
+  m_Layer: 9
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1342601374
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1342601373}
+  m_LocalRotation: {x: 0, y: 0, z: .27813983, w: .960540652}
+  m_LocalPosition: {x: -.140000001, y: -1.19000006, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 219847910}
+  m_RootOrder: 3
+--- !u!61 &1342601375
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1342601373}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: -.0684824213, y: -1.50520355e-05}
+  serializedVersion: 2
+  m_Size: {x: 3.14964533, y: 1}
 --- !u!1 &1397540596
 GameObject:
   m_ObjectHideFlags: 0
@@ -2102,7 +2151,7 @@ Transform:
   - {fileID: 414150942}
   - {fileID: 914110149}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
 --- !u!4 &1751849299 stripped
 Transform:
   m_PrefabParentObject: {fileID: 437746, guid: 0a9a6fa676c1f454ca2674778a491fa8, type: 2}
