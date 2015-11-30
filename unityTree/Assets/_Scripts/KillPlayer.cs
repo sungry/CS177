@@ -9,10 +9,9 @@ public class KillPlayer : MonoBehaviour
 
         if (other.tag == "Player")
         {
-
 			Debug.Log (this.name + " killed " + other.name);
 
-			Application.LoadLevel(1);
+            Application.LoadLevel(2);
             return;
         }
 
