@@ -13,12 +13,10 @@ public class EnableSound : MonoBehaviour {
 
     public void SetMode(){
         if (soundToggle.isOn) {
-            GameSystem.soundEnabled = true;
+			AudioListener.volume = 1.0f;
         }
         else {
-            GameSystem.soundEnabled = false;
-        }
-
-		Debug.Log (GameSystem.soundEnabled);
+			AudioListener.volume = 0.0f;
+		}
     }
 }
