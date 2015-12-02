@@ -566,37 +566,13 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 11462340, guid: 19768233be83d49d4b4432471a82faf0, type: 2}
-      propertyPath: airControl
-      value: 0
+    - target: {fileID: 9572574, guid: 19768233be83d49d4b4432471a82faf0, type: 2}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 195924, guid: 19768233be83d49d4b4432471a82faf0, type: 2}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 173124, guid: 19768233be83d49d4b4432471a82faf0, type: 2}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 134626, guid: 19768233be83d49d4b4432471a82faf0, type: 2}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 412874, guid: 19768233be83d49d4b4432471a82faf0, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -3.38000011
-      objectReference: {fileID: 0}
-    - target: {fileID: 412874, guid: 19768233be83d49d4b4432471a82faf0, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -1.32000005
-      objectReference: {fileID: 0}
-    - target: {fileID: 459414, guid: 19768233be83d49d4b4432471a82faf0, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 3.45000005
-      objectReference: {fileID: 0}
-    - target: {fileID: 459414, guid: 19768233be83d49d4b4432471a82faf0, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -0
+    - target: {fileID: 9572574, guid: 19768233be83d49d4b4432471a82faf0, type: 2}
+      propertyPath: m_UpdateMode
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 19768233be83d49d4b4432471a82faf0, type: 2}
