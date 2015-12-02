@@ -3,18 +3,24 @@
 namespace UnitySampleAssets._2D
 {
 
-    public class PlatformerCharacter2D : MonoBehaviour
+    public class BrickPlayer2D : MonoBehaviour
     {
         private bool facingRight = true; // For determining which way the player is currently facing.
 
-        [SerializeField] private float maxSpeed = 10f; // The fastest the player can travel in the x axis.
-        [SerializeField] private float jumpForce = 400f; // Amount of force added when the player jumps.	
+        [SerializeField]
+        private float maxSpeed = 10f; // The fastest the player can travel in the x axis.
+        [SerializeField]
+        private float jumpForce = 400f; // Amount of force added when the player jumps.	
 
-        [Range(0, 1)] [SerializeField] private float crouchSpeed = .36f;
-                                                     // Amount of maxSpeed applied to crouching movement. 1 = 100%
+        [Range(0, 1)]
+        [SerializeField]
+        private float crouchSpeed = .36f;
+        // Amount of maxSpeed applied to crouching movement. 1 = 100%
 
-        [SerializeField] private bool airControl = false; // Whether or not a player can steer while jumping;
-        [SerializeField] private LayerMask whatIsGround; // A mask determining what is ground to the character
+        [SerializeField]
+        private bool airControl = false; // Whether or not a player can steer while jumping;
+        [SerializeField]
+        private LayerMask whatIsGround; // A mask determining what is ground to the character
 
         private Transform groundCheck; // A position marking where to check if the player is grounded.
         private float groundedRadius = .2f; // Radius of the overlap circle to determine if grounded
@@ -43,9 +49,11 @@ namespace UnitySampleAssets._2D
 
         private void Update()
         {
-            if (Time.time > gameTime+ 30f)
-            { maxSpeed += 5f;
-                gameTime = Time.time; }
+            if (Time.time > gameTime + 30f)
+            {
+                maxSpeed += 5f;
+                gameTime = Time.time;
+            }
 
             /*
             //difficulty implementation
@@ -69,11 +77,14 @@ namespace UnitySampleAssets._2D
             if (grounded)
                 doubleJump = false;
 
-            // sprint time is now 0.2 seconds long
-            if(sprinting && (Time.time > sprintTime + 0.2))
+            if (sprinting)
             {
-                maxSpeed = 10f;
-                sprinting = false;
+                if (Time.time > sprintTime + 2)
+                {
+                    maxSpeed = 10f;
+                    sprinting = false;
+                }
+
             }
         }
 
@@ -86,20 +97,17 @@ namespace UnitySampleAssets._2D
                 sprinting = true;
                 sprintTime = Time.time;
                 maxSpeed = 50f;
-
-                // remove vertical displacement when sprinting
-                GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0.5885f);
             }
 
 
-/*			// If crouching, check to see if the character can stand up - we don't care about crouching
+            // If crouching, check to see if the character can stand up
             if (!crouch && anim.GetBool("Crouch"))
             {
                 // If the character has a ceiling preventing them from standing up, keep them crouching
                 if (Physics2D.OverlapCircle(ceilingCheck.position, ceilingRadius, whatIsGround))
                     crouch = true;
             }
-*/
+
             // Set whether or not the character is crouching in the animator
             anim.SetBool("Crouch", crouch);
 
@@ -107,19 +115,19 @@ namespace UnitySampleAssets._2D
             if (grounded || airControl)
             {
                 // Reduce the speed if crouching by the crouchSpeed multiplier
-                move = (crouch ? move*crouchSpeed : move);
+                move = (crouch ? move * crouchSpeed : move);
 
                 // The Speed animator parameter is set to the absolute value of the horizontal input.
                 anim.SetFloat("Speed", Mathf.Abs(move));
 
                 // Move the character
-                GetComponent<Rigidbody2D>().velocity = new Vector2(move*maxSpeed, GetComponent<Rigidbody2D>().velocity.y);
+                GetComponent<Rigidbody2D>().velocity = new Vector2(move * maxSpeed, GetComponent<Rigidbody2D>().velocity.y);
 
                 // If the input is moving the player right and the player is facing left...
                 if (move > 0 && !facingRight)
                     // ... flip the player.
                     Flip();
-                    // Otherwise if the input is moving the player left and the player is facing right...
+                // Otherwise if the input is moving the player left and the player is facing right...
                 else if (move < 0 && facingRight)
                     // ... flip the player.
                     Flip();
@@ -152,10 +160,10 @@ namespace UnitySampleAssets._2D
             transform.localScale = theScale;
         }
 
-	public void setSpeed(float newSpeed)
-	{
-			maxSpeed = newSpeed;
-    	}
+        public void setSpeed(float newSpeed)
+        {
+            maxSpeed = newSpeed;
+        }
 
         public double getMaxSpeed()
         {

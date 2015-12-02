@@ -18,9 +18,9 @@ TagManager:
   - 
   - 
   - Menu Items
-  - Environment
-  - 
-  - 
+  - Ground
+  - Player
+  - Background
   - 
   - 
   - 
@@ -56,4 +56,7 @@ TagManager:
     locked: 0
   - name: UI
     uniqueID: 771169021
+    locked: 0
+  - name: Player
+    uniqueID: 3945476621
     locked: 0
