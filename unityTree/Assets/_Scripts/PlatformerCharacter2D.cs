@@ -28,9 +28,9 @@ namespace UnitySampleAssets._2D
         float sprintTime;
         float gameTime;
 
-        private float difficulty2 = 20f;
-        private float difficulty3 = 30f;
-        private float difficulty4 = 40f;
+//        private float difficulty2 = 20f;
+//        private float difficulty3 = 30f;
+//        private float difficulty4 = 40f;
 
         private void Awake()
         {
@@ -61,14 +61,16 @@ namespace UnitySampleAssets._2D
         {
             // The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
             grounded = Physics2D.OverlapCircle(groundCheck.position, groundedRadius, whatIsGround);
-            anim.SetBool("Ground", grounded);
+            anim.SetBool("Running", grounded);
 
             // Set the vertical animation
-            anim.SetFloat("vSpeed", GetComponent<Rigidbody2D>().velocity.y);
+//            anim.SetFloat("vSpeed", GetComponent<Rigidbody2D>().velocity.y);
 
             if (grounded)
+			{
                 doubleJump = false;
-
+//				anim.SetBool("Jumping", false);
+			}
             // sprint time is now 0.2 seconds long
             if(sprinting && (Time.time > sprintTime + 0.2))
             {
@@ -101,7 +103,7 @@ namespace UnitySampleAssets._2D
             }
 */
             // Set whether or not the character is crouching in the animator
-            anim.SetBool("Crouch", crouch);
+//            anim.SetBool("Crouch", crouch);
 
             //only control the player if grounded or airControl is turned on
             if (grounded || airControl)
@@ -110,26 +112,26 @@ namespace UnitySampleAssets._2D
                 move = (crouch ? move*crouchSpeed : move);
 
                 // The Speed animator parameter is set to the absolute value of the horizontal input.
-                anim.SetFloat("Speed", Mathf.Abs(move));
+//                anim.SetFloat("Speed", Mathf.Abs(move));
 
                 // Move the character
                 GetComponent<Rigidbody2D>().velocity = new Vector2(move*maxSpeed, GetComponent<Rigidbody2D>().velocity.y);
 
-                // If the input is moving the player right and the player is facing left...
+/*               // If the input is moving the player right and the player is facing left...
                 if (move > 0 && !facingRight)
                     // ... flip the player.
                     Flip();
                     // Otherwise if the input is moving the player left and the player is facing right...
                 else if (move < 0 && facingRight)
                     // ... flip the player.
-                    Flip();
+                    Flip(); 
+*/
             }
             // If the player should jump...
             if ((grounded || !doubleJump) && jump)// && anim.GetBool("Ground"))
             {
                 // Add a vertical force to the player.
                 grounded = false;
-                anim.SetBool("Ground", false);
 
                 GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, 0);
 
@@ -152,19 +154,19 @@ namespace UnitySampleAssets._2D
             transform.localScale = theScale;
         }
 
-	public void setSpeed(float newSpeed)
-	{
+		public void setSpeed(float newSpeed)
+		{
 			maxSpeed = newSpeed;
-    	}
+		}
 
-        public double getMaxSpeed()
-        {
+		public double getMaxSpeed()
+		{
             return maxSpeed;
-        }
+		}
 
-        void OnGui()
-        {
-            GUI.Label(new Rect(10, 10, 300, 30), "Speed: " + maxSpeed);
-        }
+		void OnGui()
+		{
+			GUI.Label(new Rect(10, 10, 300, 30), "Speed: " + maxSpeed);
+		}
     }
 }
