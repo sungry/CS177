@@ -10,7 +10,7 @@ public class HUDScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        playerScore += Time.deltaTime;
+        playerScore += (Time.deltaTime * 10);
         //currentSpeed = PlatformerCharacter2D.getMaxSpeed();
     }
     
@@ -21,7 +21,7 @@ public class HUDScript : MonoBehaviour {
 
     void OnDisable()
     {
-        PlayerPrefs.SetInt("Score", (int)(playerScore * 100));
+        PlayerPrefs.SetInt("Score", (int)(playerScore));
     }
     void OnGUI()
     {
@@ -33,8 +33,7 @@ public class HUDScript : MonoBehaviour {
         {
             GUI.contentColor = Color.red;
         }
-            //position 10, 10 100 wide 30 tall
-        GUI.Label(new Rect(10, 10, 300, 30), "Score: " + (int)(playerScore * 10) + "    Time: " + Time.time 
-            + "     Speed: ");
+        //position 10, 10 100 wide 30 tall
+        GUI.Label(new Rect(10, 10, 300, 30), "Score: " + (int)(playerScore * 10));
     }
 }
