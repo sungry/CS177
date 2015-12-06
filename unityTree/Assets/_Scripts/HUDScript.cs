@@ -3,10 +3,20 @@ using System.Collections;
 using UnitySampleAssets._2D;
 
 public class HUDScript : MonoBehaviour {
-    //Heads up Display
+    
+	// game font set-up
+	public Font guiFont;
+	public int fontSize;
+
+//	GUIStyle style = new GUIStyle ();
+
+	//Heads up Display
     float playerScore;
     float currentSpeed;
 	
+	// score popup set-up
+	Transform player;
+
 	// Update is called once per frame
 	void Update ()
     {
@@ -16,6 +26,7 @@ public class HUDScript : MonoBehaviour {
     
     public void IncreaseScore(int amount)
     {
+		player = GameObject.Find ("Player").transform;
         playerScore += amount;
     }
 
@@ -25,15 +36,20 @@ public class HUDScript : MonoBehaviour {
     }
     void OnGUI()
     {
-        if (playerScore > 0)
+//		style.font = guiFont;
+		GUI.skin.font = guiFont;
+		fontSize = GUI.skin.font.fontSize;
+
+		if (playerScore > 0)
         {
-            GUI.contentColor = Color.black;
+            GUI.contentColor = Color.yellow;
         }
         else
         {
             GUI.contentColor = Color.red;
         }
-        //position 10, 10 100 wide 30 tall
-        GUI.Label(new Rect(10, 10, 300, 30), "Score: " + (int)(playerScore * 10));
+        //position 10, 10 300 wide 30 tall
+        GUI.Label(new Rect(30, 15, 300, 50), "Score: " + (int)(playerScore * 10));
+
     }
 }
