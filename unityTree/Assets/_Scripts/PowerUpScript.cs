@@ -3,22 +3,31 @@ using System.Collections;
 
 public class PowerUpScript : MonoBehaviour {
 
-    HUDScript hud;
 	public GameObject scoreUp;
 
 	protected bool selfDestruct = false;
+
+	private bool inTutorial;
 
 	private float destructCountdown = 1.0f;
 	private float destructSequence;
 	private float grow;
 	private GameObject score;
 
+	HUDScript hud;
+//	TutorialScript tuts;
+
+	void Start()
+	{
+		hud = GameObject.Find("Main Camera").GetComponent<HUDScript>();
+//		tuts = GameObject.Find ("Canvas Text").GetComponent<TutorialScript> ();
+	}
+
     void OnTriggerEnter2D(Collider2D other)
     //void OnCollissionExit2D(Collider2D other)
     {
         if(other.tag =="Player")
         {
-            hud = GameObject.Find("Main Camera").GetComponent<HUDScript>();
             hud.IncreaseScore(100);
 
 			selfDestruct = true;
@@ -30,12 +39,7 @@ public class PowerUpScript : MonoBehaviour {
  
         }
     }
-
-	public bool isCollected()
-	{
-		return selfDestruct;
-	}
-
+	
 	private void Update()
 	{
 		if (selfDestruct) 
@@ -50,15 +54,16 @@ public class PowerUpScript : MonoBehaviour {
 				Debug.Log(this.name + " is dead");
 			}
 
-			score.transform.localPosition += new Vector3(0f,0.1f);
-			Debug.Log (score.transform.localPosition.x + " x and " + score.transform.localPosition.y + " y");
+//			score.transform.localPosition += new Vector3(0f,0.1f);
+//			Debug.Log (score.transform.localPosition.x + " x and " + score.transform.localPosition.y + " y");
 		}
 
 	}
 
 	private void scoreFloat(Transform pup)
 	{
-		score = (GameObject)Instantiate(scoreUp, pup.transform.position, pup.transform.rotation);
-		Debug.Log ("score created");
+//		score = (GameObject)Instantiate(scoreUp, pup.transform.position, pup.transform.rotation);
+//		score.transform.localScale = new Vector3 ();
+//		Debug.Log ("score created");
 	}
 }

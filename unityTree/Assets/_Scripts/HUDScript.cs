@@ -52,4 +52,9 @@ public class HUDScript : MonoBehaviour {
         GUI.Label(new Rect(30, 15, 300, 50), "Score: " + (int)(playerScore * 10));
 
     }
+
+	void floatScore()
+	{
+
+	}
 }

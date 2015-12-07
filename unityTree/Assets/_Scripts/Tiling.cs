@@ -61,8 +61,6 @@ public class Tiling : MonoBehaviour {
 				hasLeftBuddy = true;
 			} // we don't need to check to the left */
 		}
-		
-		// TODO: buddy clean up
 
 		if (hasLeftBuddy) // once buddy exists, watch for self-destruction
 		{
