@@ -39,13 +39,12 @@ public class Tiling : MonoBehaviour {
 	{
 		if (!hasRightBuddy) // removed ' || !hasLeftBuddy' since we don't care
 		{
-
 			// calculate camera extent from player in game units
 			float camExtent = cam.orthographicSize * Screen.width/Screen.height;
 
 			// find edge of the sprite visible by camera
-			float edgeVisibleRight = myTransform.position.x + spriteExtent/2 - camExtent;
-			float edgeVisibleLeft = myTransform.position.x - spriteExtent/2 + camExtent;
+			float edgeVisibleRight = myTransform.position.x + spriteExtent/2 - Screen.width/2;
+			float edgeVisibleLeft = myTransform.position.x - spriteExtent/2 + Screen.width/2;
 
 			// check for edge of element to the right or left
 			if (cam.transform.position.x >= edgeVisibleRight - offset &&
@@ -66,7 +65,6 @@ public class Tiling : MonoBehaviour {
 
 		if (hasLeftBuddy) // once buddy exists, watch for self-destruction
 		{
-
 			// calculate camera extent from player in game units
 			float camExtent = cam.orthographicSize * Screen.width/Screen.height;
 
