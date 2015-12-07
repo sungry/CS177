@@ -27,13 +27,16 @@ public class HUDScript : MonoBehaviour {
     {
         if (playerScore > 0)
         {
-            GUI.contentColor = Color.black;
+            GUI.contentColor = Color.white;
+			GUI.skin.textArea.fontSize = 22;
+			GUI.skin.textArea.fontStyle = FontStyle.Bold;
         }
         else
         {
             GUI.contentColor = Color.red;
         }
-        //position 10, 10 100 wide 30 tall
-        GUI.Label(new Rect(10, 10, 300, 30), "Score: " + (int)(playerScore * 10));
+		string score =  ((int)(playerScore * 10)).ToString();
+		int len = "Score: ".Length + score.Length;
+        GUI.TextArea(new Rect(10, 10, len*12, 30), "Score: " + (int)(playerScore * 10));
     }
 }
