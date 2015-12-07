@@ -10,7 +10,7 @@ public class SpawnScript : MonoBehaviour {
     private float gameTime;
 	private float countTime;
 	private float powerUpStart = 5f;
-	private float playerKillerStart = 10f;
+	private float playerKillerStart = 12f;
 	private bool sleeping = true;	
 	private GameObject self;
 

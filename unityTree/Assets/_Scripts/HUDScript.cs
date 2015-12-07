@@ -45,15 +45,16 @@ public class HUDScript : MonoBehaviour {
             GUI.contentColor = Color.yellow;
 //			GUI.contentColor = Color.white;
 			GUI.skin.textArea.fontSize = 22;
-			GUI.skin.textArea.fontStyle = FontStyle.Bold;
+//			GUI.skin.textArea.fontStyle = FontStyle.Bold;
         }
         else
         {
             GUI.contentColor = Color.red;
         }
+
 		string score =  ((int)(playerScore * 10)).ToString();
 		int len = "Score: ".Length + score.Length;
-        GUI.TextArea(new Rect(10, 10, len*12, 30), "Score: " + (int)(playerScore * 10));
+        GUI.TextArea(new Rect(20, 10, len*13, 30), "Score: " + (int)(playerScore * 10));
     }
 
 	void floatScore()

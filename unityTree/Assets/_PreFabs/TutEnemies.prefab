@@ -48,9 +48,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'AVOID
-
-    student HEADS'
+  m_Text: "AVOID\nstudent \nHEADS"
 --- !u!222 &22258108
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -83,9 +81,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 0}
       propertyPath: m_Text
-      value: 'AVOID
-
-        student HEADS'
+      value: "AVOID\nstudent \nHEADS"
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_AnchoredPosition.y
