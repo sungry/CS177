@@ -97,6 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebd9216b4464c1b4fa8cdab53107bc79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreUp: {fileID: 105324, guid: b10f8e7e4224a417d849cb3452854a0d, type: 2}
 --- !u!212 &21285860
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -221,6 +222,10 @@ Prefab:
       propertyPath: destructOffset
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: scoreUp
+      value: 
+      objectReference: {fileID: 105324, guid: b10f8e7e4224a417d849cb3452854a0d, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 128454}

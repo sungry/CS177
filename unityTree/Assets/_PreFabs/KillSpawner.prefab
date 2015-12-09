@@ -10,11 +10,11 @@ GameObject:
   - 4: {fileID: 437746}
   - 33: {fileID: 3302572}
   - 23: {fileID: 2379678}
-  - 114: {fileID: 11469038}
   - 58: {fileID: 5853816}
+  - 114: {fileID: 11420152}
   m_Layer: 0
   m_Name: KillSpawner
-  m_TagString: Untagged
+  m_TagString: Spawner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26,7 +26,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 139516}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -23.75, y: -22.5499992, z: 0}
+  m_LocalPosition: {x: 1.84000015, y: -.920000076, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -75,7 +75,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: .5
---- !u!114 &11469038
+--- !u!114 &11420152
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -87,9 +87,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objs:
+  - {fileID: 146822, guid: b9ca6f15a07c747d09f390c1b7953b47, type: 2}
   - {fileID: 129768, guid: 00c24c80c11e250448c8ece5bb84d498, type: 2}
-  spawnMin: 15
-  spawnMax: 25
+  spawnMin: 3
+  spawnMax: 10
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -109,6 +110,15 @@ Prefab:
       propertyPath: objs.Array.data[0]
       value: 
       objectReference: {fileID: 129768, guid: 00c24c80c11e250448c8ece5bb84d498, type: 2}
+    - target: {fileID: 0}
+      propertyPath: m_TagString
+      value: Spawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: tutCanvas
+      value: 
+      objectReference: {fileID: 22337534, guid: 18cf7f23488f1427f82362c8426d04c5,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 139516}
