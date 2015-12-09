@@ -21,7 +21,7 @@ public class TutorialScript : MonoBehaviour
 	void Start () 
 	{
 		stageStart = Time.time + goDelay;
-		tutPosition = new Vector3 (110,125);
+		tutPosition = new Vector3 (500, 250);
 
 	}
 	
