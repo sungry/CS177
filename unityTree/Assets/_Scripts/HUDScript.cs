@@ -3,38 +3,62 @@ using System.Collections;
 using UnitySampleAssets._2D;
 
 public class HUDScript : MonoBehaviour {
-    //Heads up Display
+    
+	// game font set-up
+	public Font guiFont;
+	public int fontSize;
+
+//	GUIStyle style = new GUIStyle ();
+
+	//Heads up Display
     float playerScore;
     float currentSpeed;
 	
+	// score popup set-up
+	Transform player;
+
 	// Update is called once per frame
 	void Update ()
     {
-        playerScore += Time.deltaTime;
+        playerScore += (Time.deltaTime * 10);
         //currentSpeed = PlatformerCharacter2D.getMaxSpeed();
     }
     
     public void IncreaseScore(int amount)
     {
+		player = GameObject.Find ("Player").transform;
         playerScore += amount;
     }
 
     void OnDisable()
     {
-        PlayerPrefs.SetInt("Score", (int)(playerScore * 100));
+        PlayerPrefs.SetInt("Score", (int)(playerScore*10));
     }
     void OnGUI()
     {
-        if (playerScore > 0)
+//		style.font = guiFont;
+		GUI.skin.font = guiFont;
+		fontSize = GUI.skin.font.fontSize;
+
+		if (playerScore > 0)
         {
-            GUI.contentColor = Color.black;
+            GUI.contentColor = Color.yellow;
+//			GUI.contentColor = Color.white;
+			GUI.skin.textArea.fontSize = 22;
+//			GUI.skin.textArea.fontStyle = FontStyle.Bold;
         }
         else
         {
             GUI.contentColor = Color.red;
         }
-            //position 10, 10 100 wide 30 tall
-        GUI.Label(new Rect(10, 10, 300, 30), "Score: " + (int)(playerScore * 10) + "    Time: " + Time.time 
-            + "     Speed: ");
+
+		string score =  ((int)(playerScore * 10)).ToString();
+		int len = "Score: ".Length + score.Length;
+        GUI.TextArea(new Rect(20, 10, len*13, 30), "Score: " + (int)(playerScore * 10));
     }
+
+	void floatScore()
+	{
+
+	}
 }
