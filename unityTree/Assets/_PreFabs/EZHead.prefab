@@ -15,6 +15,7 @@ GameObject:
   - 95: {fileID: 9536708}
   - 114: {fileID: 11475932}
   - 114: {fileID: 11494252}
+  - 114: {fileID: 11446074}
   m_Layer: 9
   m_Name: EZHead
   m_TagString: Untagged
@@ -29,8 +30,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 168270}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 34.0099983, y: -22.2199993, z: -33.78125}
-  m_LocalScale: {x: .180000007, y: .180000007, z: 0}
+  m_LocalPosition: {x: 25.8500004, y: -6.94999981, z: 0}
+  m_LocalScale: {x: .289999992, y: .289999992, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -56,7 +57,7 @@ BoxCollider2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 168270}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Material: {fileID: 6200000, guid: 8be6341e1ce3f4cec9902bc34f72d20a, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
@@ -73,9 +74,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: .350288391, y: -.233524323}
   serializedVersion: 2
-  m_Size: {x: 5, y: 8}
+  m_Size: {x: 4.29941654, y: 7.53295326}
 --- !u!95 &9536708
 Animator:
   serializedVersion: 3
@@ -93,6 +94,17 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11446074
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 168270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13476d7371d3126419122b2e92e35859, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11475932
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -112,7 +124,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 168270}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2854dbdafa4614944a9d31e4e89b6e75, type: 3}
+  m_Script: {fileID: 11500000, guid: 85e5c5f59ce364f429e23ef475a18e25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!212 &21257590
@@ -155,6 +167,18 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: 9e1dc7207b1d1104b92f309114633676,
         type: 3}
+    - target: {fileID: 0}
+      propertyPath: m_LocalScale.x
+      value: .289999992
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LocalScale.y
+      value: .289999992
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 168270}

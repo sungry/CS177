@@ -41,10 +41,13 @@ public class SpawnScript : MonoBehaviour {
 
 		if (!sleeping) 
 		{
-//			spawnMin *= 0.75f;
-//			spawnMax *= 0.7f;
-			gameTime = Time.time;
-		} 
+            if (Time.time > gameTime + 30f)
+            {
+                spawnMin *= 0.75f;
+                spawnMax *= 0.7f;
+                gameTime = Time.time;
+            }
+        } 
     }
 
 	IEnumerator StartSpawn()
