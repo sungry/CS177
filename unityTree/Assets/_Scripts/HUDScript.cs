@@ -54,7 +54,7 @@ public class HUDScript : MonoBehaviour {
 
 		string score =  ((int)(playerScore * 10)).ToString();
 		int len = "Score: ".Length + score.Length;
-        GUI.TextArea(new Rect(20, 10, len*13, 30), "Score: " + (int)(playerScore * 10));
+        GUI.TextArea(new Rect(20, 12, len*14, 30), "Score: " + (int)(playerScore * 10));
     }
 
 	void floatScore()
