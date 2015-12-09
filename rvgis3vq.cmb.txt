@@ -1,0 +1,27 @@
+﻿
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch EricCDev5
+# Your branch is up-to-date with 'origin/EricCDev5'.
+#
+# Changes to be committed:
+#	modified:   unityTree/Assets/Level01.unity
+#	new file:   unityTree/Assets/_Pictures/Coffee.png
+#	new file:   unityTree/Assets/_Pictures/Coffee.png.meta
+#	new file:   unityTree/Assets/_PreFabs/Coffee.prefab
+#	new file:   unityTree/Assets/_PreFabs/Coffee.prefab.meta
+#	modified:   unityTree/Assets/_PreFabs/PlayerKiller.prefab
+#	modified:   unityTree/Assets/_PreFabs/PlayerKiller2.prefab
+#	modified:   unityTree/Assets/_PreFabs/PowerUp.prefab
+#	modified:   unityTree/Assets/_PreFabs/PowerUp.prefab.meta
+#	modified:   unityTree/Assets/_Scripts/HUDScript.cs
+#	new file:   unityTree/Assets/_Scripts/Rotations.cs
+#	new file:   unityTree/Assets/_Scripts/Rotations.cs.meta
+#	new file:   unityTree/Assets/_Scripts/Translation.cs
+#	new file:   unityTree/Assets/_Scripts/Translation.cs.meta
+#	modified:   unityTree/ProjectSettings/ProjectSettings.asset
+#	modified:   unityTree/ProjectSettings/ProjectVersion.txt
+#	new file:   unityTree/WebVersion05/WebVersion05.html
+#	new file:   unityTree/WebVersion05/WebVersion05.unity3d
+#
+

@@ -22,6 +22,8 @@ namespace UnitySampleAssets._2D
         private Transform ceilingCheck; // A position marking where to check for ceilings
         private float ceilingRadius = .01f; // Radius of the overlap circle to determine if the player can stand up
         private Animator anim; // Reference to the player's animator component.
+        private AudioClip coffee;
+        AudioSource audio;
 
         bool doubleJump = false;
         bool sprinting = false;
@@ -39,13 +41,16 @@ namespace UnitySampleAssets._2D
             groundCheck = transform.Find("GroundCheck");
             ceilingCheck = transform.Find("CeilingCheck");
             anim = GetComponent<Animator>();
+            audio = GetComponent<AudioSource>();
         }
 
         private void Update()
         {
             if (Time.time > gameTime+ 30f)
             { maxSpeed += 3f;
-                gameTime = Time.time; }
+                gameTime = Time.time;
+                audio.Play();
+            }
 
             /*
             //difficulty implementation

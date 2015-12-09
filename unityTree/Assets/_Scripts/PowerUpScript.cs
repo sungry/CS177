@@ -13,14 +13,16 @@ public class PowerUpScript : MonoBehaviour {
 	private float destructSequence;
 	private float grow;
 	private GameObject score;
-
+    private AudioClip coffee;
+    AudioSource audio;
 	HUDScript hud;
 //	TutorialScript tuts;
 
 	void Start()
 	{
 		hud = GameObject.Find("Main Camera").GetComponent<HUDScript>();
-//		tuts = GameObject.Find ("Canvas Text").GetComponent<TutorialScript> ();
+        //		tuts = GameObject.Find ("Canvas Text").GetComponent<TutorialScript> ();
+        audio = GetComponent<AudioSource>();
 	}
 
     void OnTriggerEnter2D(Collider2D other)
@@ -31,10 +33,10 @@ public class PowerUpScript : MonoBehaviour {
             hud.IncreaseScore(100);
 
 			selfDestruct = true;
-
+            audio.Play();
 			destructSequence = Time.time;
 			grow = this.transform.localScale.x * 0.1f;
-
+            
 			scoreFloat (this.transform);
  
         }
