@@ -10,6 +10,8 @@ Feature Requirements: https://docs.google.com/document/d/1tXMiU68OMgLnH2I_0-VLsL
 
 Functional Spec: https://docs.google.com/document/d/1Bo-EpJk44Mouh8B656O5ui7HwNDy4gI0aFS2-5W8Un4/edit?pli=1
 
+See progress at: http://hills.ccsf.edu/~echu6
+
 Our Illustrious Team:
 @sungry
 @kokixi
