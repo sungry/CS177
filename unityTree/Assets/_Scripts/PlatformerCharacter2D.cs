@@ -93,9 +93,6 @@ namespace UnitySampleAssets._2D
                 sprinting = true;
                 sprintTime = Time.time;
                 maxSpeed = 50f;
-
-                // remove vertical displacement when sprinting
-                GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0.5885f);
             }
 
 
