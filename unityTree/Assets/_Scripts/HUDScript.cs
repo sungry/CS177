@@ -28,6 +28,7 @@ public class HUDScript : MonoBehaviour {
     {
 		player = GameObject.Find ("Player").transform;
         playerScore += amount;
+		StartCoroutine(floatScore(amount));
     }
 
     void OnDisable()
@@ -54,11 +55,11 @@ public class HUDScript : MonoBehaviour {
 
 		string score =  ((int)(playerScore * 10)).ToString();
 		int len = "Score: ".Length + score.Length;
-        GUI.TextArea(new Rect(20, 12, len*14, 30), "Score: " + (int)(playerScore * 10));
+        GUI.TextArea(new Rect(20, 12, (len*14)+10, 30), "Score: " + (int)(playerScore * 10));
     }
 
-	void floatScore()
+	IENumerator void floatScore(int score)
 	{
-
+		
 	}
 }
