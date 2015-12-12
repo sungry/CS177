@@ -79,7 +79,7 @@ namespace UnitySampleAssets._2D
             // sprint time is now 0.2 seconds long
             if(sprinting && (Time.time > sprintTime + 0.2))
             {
-                maxSpeed = 10f;
+                maxSpeed -= 50f;
                 sprinting = false;
             }
         }
@@ -92,7 +92,7 @@ namespace UnitySampleAssets._2D
             {
                 sprinting = true;
                 sprintTime = Time.time;
-                maxSpeed = 50f;
+                maxSpeed += 50f;
             }
 
 
