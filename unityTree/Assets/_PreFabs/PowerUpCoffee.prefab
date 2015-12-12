@@ -16,7 +16,7 @@ GameObject:
   - 114: {fileID: 11451736}
   - 82: {fileID: 8258494}
   m_Layer: 0
-  m_Name: PowerUp
+  m_Name: PowerUpCoffee
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -169,6 +169,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreUp: {fileID: 105324, guid: b10f8e7e4224a417d849cb3452854a0d, type: 2}
+  scoreValue: 100
 --- !u!212 &21285860
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -187,9 +188,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_MinimumChartSize: 4
   m_AutoUVMaxDistance: .5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
@@ -320,6 +319,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
       value: .791000009
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: scoreValue
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

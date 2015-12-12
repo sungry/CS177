@@ -4,9 +4,10 @@ using System.Collections;
 public class PowerUpScript : MonoBehaviour {
 
 	public GameObject scoreUp;
-
+	public int scoreValue;
+	
 	protected bool selfDestruct = false;
-
+	
 	private bool inTutorial;
 
 	private float destructCountdown = 1.0f;
@@ -30,14 +31,12 @@ public class PowerUpScript : MonoBehaviour {
     {
         if(other.tag =="Player")
         {
-            hud.IncreaseScore(100);
+            hud.IncreaseScore(scoreValue);
 
 			selfDestruct = true;
             audio.Play();
 			destructSequence = Time.time;
 			grow = this.transform.localScale.x * 0.1f;
-            
-			scoreFloat (this.transform);
  
         }
     }
@@ -61,11 +60,9 @@ public class PowerUpScript : MonoBehaviour {
 		}
 
 	}
-
-	private void scoreFloat(Transform pup)
+	
+	public int getScoreValue()
 	{
-//		score = (GameObject)Instantiate(scoreUp, pup.transform.position, pup.transform.rotation);
-//		score.transform.localScale = new Vector3 ();
-//		Debug.Log ("score created");
+		return scoreValue;
 	}
 }
