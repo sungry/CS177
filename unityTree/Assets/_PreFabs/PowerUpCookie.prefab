@@ -158,7 +158,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreUp: {fileID: 105324, guid: b10f8e7e4224a417d849cb3452854a0d, type: 2}
-  scoreValue: 0
+  scoreValue: 1000
 --- !u!114 &11491794
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -208,6 +208,10 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: d3f622804e144334dbb5a1ffc6c77c8c,
         type: 3}
+    - target: {fileID: 0}
+      propertyPath: scoreValue
+      value: 1000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 119546}

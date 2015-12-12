@@ -169,7 +169,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreUp: {fileID: 105324, guid: b10f8e7e4224a417d849cb3452854a0d, type: 2}
-  scoreValue: 0
+  scoreValue: 100
 --- !u!212 &21285860
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -319,6 +319,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
       value: .791000009
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: scoreValue
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

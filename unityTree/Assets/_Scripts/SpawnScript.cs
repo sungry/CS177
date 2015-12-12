@@ -30,7 +30,7 @@ public class SpawnScript : MonoBehaviour {
 		playerKillerStart += Time.time;
 		gameTime = Time.time;
 
-		Debug.Log ("Countdown begun...");
+//		Debug.Log ("Countdown begun...");
 
 		StartCoroutine (StartSpawn ());
 		
@@ -53,7 +53,7 @@ public class SpawnScript : MonoBehaviour {
 	IEnumerator StartSpawn()
 	{
 		count++;
-		Debug.Log ("Checking if " + self.name + " ready to spawn #" + count);
+//		Debug.Log ("Checking if " + self.name + " ready to spawn #" + count);
 
 		if (sleeping && powerUpStart < Time.time)
 			enablePowerUps ();
@@ -65,8 +65,8 @@ public class SpawnScript : MonoBehaviour {
 
 		if (sleeping)
 			StartCoroutine (StartSpawn ());
-		else
-			Debug.Log (self.name + " is awake");
+//		else
+//			Debug.Log (self.name + " is awake");
 
 	}
 
@@ -79,7 +79,7 @@ public class SpawnScript : MonoBehaviour {
 	/// send true to wake up, send false to put to sleep
 	private void enablePowerUps()
 	{
-		Debug.Log ("Attemtping Enable at " + Time.time + " for " + self.name);
+//		Debug.Log ("Attemtping Enable at " + Time.time + " for " + self.name);
 
 		if (self.name.StartsWith ("PowerUpSpawn")) 
 		{
@@ -87,10 +87,10 @@ public class SpawnScript : MonoBehaviour {
 //			gameTime = Time.time;
 
 			sleeping = false;
-			Debug.Log ("Power up activated for " + self.name);
+//			Debug.Log ("Power up activated for " + self.name);
 		} 
-		else
-			Debug.Log (self.name + " did not activate");
+//		else
+//			Debug.Log (self.name + " did not activate");
 
 	}
 
@@ -102,10 +102,10 @@ public class SpawnScript : MonoBehaviour {
 //			gameTime = Time.time;
 
 			sleeping = false;
-			Debug.Log ("Killer activated for " + self.name);
+//			Debug.Log ("Killer activated for " + self.name);
 		} 
-		else
-			Debug.Log (self.name + " did not activate");
+//		else
+//			Debug.Log (self.name + " did not activate");
 
 	}
 

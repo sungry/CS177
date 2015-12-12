@@ -37,8 +37,6 @@ public class PowerUpScript : MonoBehaviour {
             audio.Play();
 			destructSequence = Time.time;
 			grow = this.transform.localScale.x * 0.1f;
-            
-			scoreFloat (this.transform);
  
         }
     }
@@ -61,13 +59,6 @@ public class PowerUpScript : MonoBehaviour {
 //			Debug.Log (score.transform.localPosition.x + " x and " + score.transform.localPosition.y + " y");
 		}
 
-	}
-
-	private void scoreFloat(Transform pup)
-	{
-//		score = (GameObject)Instantiate(scoreUp, pup.transform.position, pup.transform.rotation);
-//		score.transform.localScale = new Vector3 ();
-//		Debug.Log ("score created");
 	}
 	
 	public int getScoreValue()
