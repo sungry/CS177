@@ -8,7 +8,7 @@ namespace UnitySampleAssets._2D
         private bool facingRight = true; // For determining which way the player is currently facing.
 
         [SerializeField] private float maxSpeed = 10f; // The fastest the player can travel in the x axis.
-        [SerializeField] private float jumpForce = 400f; // Amount of force added when the player jumps.	
+        [SerializeField] private float jumpForce = 800f; // Amount of force added when the player jumps.	
 
         [Range(0, 1)] [SerializeField] private float crouchSpeed = .36f;
                                                      // Amount of maxSpeed applied to crouching movement. 1 = 100%
@@ -22,15 +22,17 @@ namespace UnitySampleAssets._2D
         private Transform ceilingCheck; // A position marking where to check for ceilings
         private float ceilingRadius = .01f; // Radius of the overlap circle to determine if the player can stand up
         private Animator anim; // Reference to the player's animator component.
+        private AudioClip coffee;
+        AudioSource audio;
 
         bool doubleJump = false;
         bool sprinting = false;
         float sprintTime;
         float gameTime;
 
-        private float difficulty2 = 20f;
-        private float difficulty3 = 30f;
-        private float difficulty4 = 40f;
+//        private float difficulty2 = 20f;
+//        private float difficulty3 = 30f;
+//        private float difficulty4 = 40f;
 
         private void Awake()
         {
@@ -39,13 +41,16 @@ namespace UnitySampleAssets._2D
             groundCheck = transform.Find("GroundCheck");
             ceilingCheck = transform.Find("CeilingCheck");
             anim = GetComponent<Animator>();
+            audio = GetComponent<AudioSource>();
         }
 
         private void Update()
         {
             if (Time.time > gameTime+ 30f)
-            { maxSpeed += 5f;
-                gameTime = Time.time; }
+            { maxSpeed += 3f;
+                gameTime = Time.time;
+                audio.Play();
+            }
 
             /*
             //difficulty implementation
@@ -61,18 +66,20 @@ namespace UnitySampleAssets._2D
         {
             // The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
             grounded = Physics2D.OverlapCircle(groundCheck.position, groundedRadius, whatIsGround);
-            anim.SetBool("Ground", grounded);
+            anim.SetBool("Running", grounded);
 
             // Set the vertical animation
-            anim.SetFloat("vSpeed", GetComponent<Rigidbody2D>().velocity.y);
+//            anim.SetFloat("vSpeed", GetComponent<Rigidbody2D>().velocity.y);
 
             if (grounded)
+			{
                 doubleJump = false;
-
+//				anim.SetBool("Jumping", false);
+			}
             // sprint time is now 0.2 seconds long
             if(sprinting && (Time.time > sprintTime + 0.2))
             {
-                maxSpeed = 10f;
+                maxSpeed -= 50f;
                 sprinting = false;
             }
         }
@@ -85,10 +92,7 @@ namespace UnitySampleAssets._2D
             {
                 sprinting = true;
                 sprintTime = Time.time;
-                maxSpeed = 50f;
-
-                // remove vertical displacement when sprinting
-                GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0.5885f);
+                maxSpeed += 50f;
             }
 
 
@@ -101,7 +105,7 @@ namespace UnitySampleAssets._2D
             }
 */
             // Set whether or not the character is crouching in the animator
-            anim.SetBool("Crouch", crouch);
+//            anim.SetBool("Crouch", crouch);
 
             //only control the player if grounded or airControl is turned on
             if (grounded || airControl)
@@ -110,26 +114,26 @@ namespace UnitySampleAssets._2D
                 move = (crouch ? move*crouchSpeed : move);
 
                 // The Speed animator parameter is set to the absolute value of the horizontal input.
-                anim.SetFloat("Speed", Mathf.Abs(move));
+//                anim.SetFloat("Speed", Mathf.Abs(move));
 
                 // Move the character
                 GetComponent<Rigidbody2D>().velocity = new Vector2(move*maxSpeed, GetComponent<Rigidbody2D>().velocity.y);
 
-                // If the input is moving the player right and the player is facing left...
+/*               // If the input is moving the player right and the player is facing left...
                 if (move > 0 && !facingRight)
                     // ... flip the player.
                     Flip();
                     // Otherwise if the input is moving the player left and the player is facing right...
                 else if (move < 0 && facingRight)
                     // ... flip the player.
-                    Flip();
+                    Flip(); 
+*/
             }
             // If the player should jump...
             if ((grounded || !doubleJump) && jump)// && anim.GetBool("Ground"))
             {
                 // Add a vertical force to the player.
                 grounded = false;
-                anim.SetBool("Ground", false);
 
                 GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, 0);
 
@@ -152,19 +156,19 @@ namespace UnitySampleAssets._2D
             transform.localScale = theScale;
         }
 
-	public void setSpeed(float newSpeed)
-	{
+		public void setSpeed(float newSpeed)
+		{
 			maxSpeed = newSpeed;
-    	}
+		}
 
-        public double getMaxSpeed()
-        {
+		public double getMaxSpeed()
+		{
             return maxSpeed;
-        }
+		}
 
-        void OnGui()
-        {
-            GUI.Label(new Rect(10, 10, 300, 30), "Speed: " + maxSpeed);
-        }
+		void OnGui()
+		{
+			GUI.Label(new Rect(10, 10, 300, 30), "Speed: " + maxSpeed);
+		}
     }
 }

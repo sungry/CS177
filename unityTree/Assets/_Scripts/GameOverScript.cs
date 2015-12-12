@@ -1,27 +1,17 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class GameOverScript : MonoBehaviour {
 
     int score = 0;
-	private AudioSource audioSource;
+	public Text scoreText;
 
 	void Start ()
     {
         score = PlayerPrefs.GetInt("Score");
-        if (GameSystem.soundEnabled == false) {
-            audioSource = audioSource.GetComponent<AudioSource>();
-            audioSource.mute = true;
-        }
-    }
+		scoreText = GameObject.Find("Canvas").GetComponentInChildren<Text>();
+		scoreText.text = "SCORE     " + score;
 
-    void OnGUI()
-    {
-        GUI.Label(new Rect(Screen.width / 2 - 40, 50, 80, 30), "GAME OVER");
-        GUI.Label(new Rect(Screen.width / 2 - 40, 300, 80, 30), "Score: " + score);
-           if(GUI.Button (new Rect(Screen.width / 2-30, 350, 60, 30), "Retry?"))
-        {
-            Application.LoadLevel(1);
-        }
     }
 }

@@ -11,7 +11,7 @@ GameObject:
   - 212: {fileID: 21228972}
   - 114: {fileID: 11415016}
   - 114: {fileID: 11462904}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: BackgroundSmallClouds
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25,7 +25,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 181948}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.0399999991, y: 1.74000001, z: 9}
+  m_LocalPosition: {x: .850000024, y: -1.10000002, z: 9}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -84,7 +84,7 @@ SpriteRenderer:
   m_SortingLayerID: 1093696345
   m_SortingOrder: -10
   m_Sprite: {fileID: 21300000, guid: 072ad31ca8320224fa7ecc9b02ac58f6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: .426470578, g: .285358995, b: .285358995, a: 1}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

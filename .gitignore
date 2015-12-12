@@ -30,4 +30,8 @@ obj/
 ehthumbs.db
 Thumbs.db
 
+# ============ #
+# Other        #
+# ============ #
 *.pdb
+builds/

@@ -13,6 +13,8 @@ GameObject:
   - 61: {fileID: 6127816}
   - 61: {fileID: 6175452}
   - 95: {fileID: 9532240}
+  - 114: {fileID: 11498340}
+  - 114: {fileID: 11452384}
   m_Layer: 9
   m_Name: PlayerKiller2
   m_TagString: Untagged
@@ -27,8 +29,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 146822}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.1960659, y: -5.56150055, z: -58.1328125}
-  m_LocalScale: {x: .25, y: .25, z: 0}
+  m_LocalPosition: {x: 34.0099983, y: -22.2199993, z: -33.78125}
+  m_LocalScale: {x: .180000007, y: .180000007, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -54,7 +56,7 @@ BoxCollider2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 146822}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Material: {fileID: 6200000, guid: 8be6341e1ce3f4cec9902bc34f72d20a, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
@@ -91,6 +93,28 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11452384
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 146822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2854dbdafa4614944a9d31e4e89b6e75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11498340
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 146822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b79f2d2fee54db408dab4d230dd3331, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &21246496
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -132,11 +156,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_LocalScale.x
-      value: .25
+      value: .180000007
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_LocalScale.y
-      value: .25
+      value: .180000007
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
